@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<cinder>
+<block
+	name="Cinder-PS3Eye"
+	id="us.onewaytheater.ps3eye"
+	git="git://github.com/eighteight/Cinder-PS3Eye"
+	author="Cinder Project"
+	license="Apache 2.0, LGPL"
+	library="https://github.com/libusbx/libusbx"
+	summary="Wraps libusbx for Cinder."
+	>
+	<supports os="macosx" />
+    
+    <copyExclude>samples</copyExclude>
+	<header>src/ps3eye.h</header>
+    <header>src/libusb.h</header>
+	<source>src/ps3eye.cpp</source>
+	<includePath>src</includePath>
+	<platform os="macosx">
+        <framework sdk="true">IOKit.framework</framework>
+		<staticLibrary>lib/libusb/osx/libusb.a</staticLibrary>
+	</platform>
+</block>
+<template>templates/Basic GL/template.xml</template>
+</cinder>

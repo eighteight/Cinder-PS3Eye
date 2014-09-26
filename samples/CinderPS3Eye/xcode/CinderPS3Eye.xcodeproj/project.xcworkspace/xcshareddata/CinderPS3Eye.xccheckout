@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C6BD14B2-314B-4ED8-9370-233BC36999DC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CinderPS3Eye</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>008476FF-AAF7-4BCE-8158-C7999655D7E8</key>
+		<string>https://github.com/eighteight/Cinder-PS3Eye.git</string>
+		<key>3093E03B-4D49-4797-8655-1DF4779BA54B</key>
+		<string>https://github.com/simongeilfus/Cinder-ImGui.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>samples/CinderPS3Eye/xcode/CinderPS3Eye.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>008476FF-AAF7-4BCE-8158-C7999655D7E8</key>
+		<string>../../../../..</string>
+		<key>3093E03B-4D49-4797-8655-1DF4779BA54B</key>
+		<string>../../../../../../Cinder-ImGui</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/eighteight/Cinder-PS3Eye.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>008476FF-AAF7-4BCE-8158-C7999655D7E8</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3093E03B-4D49-4797-8655-1DF4779BA54B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Cinder-ImGui</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>008476FF-AAF7-4BCE-8158-C7999655D7E8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Cinder-PS3Eye</string>
+		</dict>
+	</array>
+</dict>
+</plist>
