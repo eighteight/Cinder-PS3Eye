@@ -18,7 +18,7 @@
 	<includePath>src</includePath>
 	<platform os="macosx">
         <framework sdk="true">IOKit.framework</framework>
-		<staticLibrary>lib/libusb/osx/libusb.a</staticLibrary>
+		<staticLibrary>lib/libusb/osx/libusb-1.0.0.dylib</staticLibrary>
 	</platform>
 </block>
 <template>templates/Basic GL/template.xml</template>

@@ -22,7 +22,7 @@
 		<key>0E1A2EFF0A48C01857077D1AD3E6442997DB3546</key>
 		<string>../../../../..</string>
 		<key>AD4B458D0D225ED63FAE0155615993B7D3ECE020</key>
-		<string>../../../../../../..</string>
+		<string>../../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/eighteight/Cinder-PS3Eye.git</string>
@@ -38,7 +38,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>AD4B458D0D225ED63FAE0155615993B7D3ECE020</string>
 			<key>IDESourceControlWCCName</key>
-			<string>..</string>
+			<string></string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>

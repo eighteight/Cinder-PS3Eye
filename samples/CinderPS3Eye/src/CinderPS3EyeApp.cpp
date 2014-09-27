@@ -3,6 +3,7 @@
 #include "cinder/gl/Texture.h"
 #include "cinder/app/RendererGl.h"
 #include "ps3eye.h"
+#include "cinder/params/Params.h"
 
 using namespace ci;
 using namespace ci::app;
@@ -57,27 +58,6 @@ static void yuv422_to_rgba(const uint8_t *yuv_src, const int stride, uint8_t *ds
     }
 }
 
-//class eyeFPS : public ciUIFPS
-//{
-//public:
-//    eyeFPS(float x, float y, int _size):ciUIFPS(x,y,_size)
-//    {
-//    }
-//
-//    eyeFPS(int _size):ciUIFPS(_size)
-//    {
-//    }
-//
-//	void update_fps(float fps)
-//	{
-//		setLabel("FPS: " + numToString(fps, labelPrecision));
-//	}
-//};
-
-
-
-
-
 class CinderPS3EyeApp : public AppNative {
 public:
     void setup();
@@ -85,12 +65,18 @@ public:
     void update();
     void draw();
     void shutdown();
+    void setGain();
     
     void eyeUpdateThreadFn();
     
     //ciUICanvas *gui;
     //eyeFPS *eyeFpsLab;
     //void guiEvent(ciUIEvent *event);
+    
+    params::InterfaceGlRef		mParams;
+    float						mFrameRate;
+    bool                        isAutoGain;
+    bool                        isAutoWB;
     
     ps3eye::PS3EYECam::PS3EYERef eye;
     
@@ -126,11 +112,6 @@ void CinderPS3EyeApp::setup()
     mCamFpsLastSampleFrame = 0;
     mCamFpsLastSampleTime = 0;
     
-    //gui = new ciUICanvas(0,0,320, 480);
-    
-    float gh = 15;
-    float slw = 320 - 20;
-    
     if(devices.size())
     {
         eye = devices.at(0);
@@ -146,12 +127,17 @@ void CinderPS3EyeApp::setup()
         // create and launch the thread
         mThread = thread( bind( &CinderPS3EyeApp::eyeUpdateThreadFn, this ) );
         
-        //        gui->addWidgetDown(new ciUILabel("EYE", CI_UI_FONT_MEDIUM));
-        //
+        mParams = params::InterfaceGl::create( "PS3EYE", toPixels( ivec2( 180, 150 ) ) );
+
+        mParams->addParam( "Framerate", &mFrameRate, "", true );
+        mParams->addSeparator();
+        mParams->addParam( "Auto gain", &isAutoGain );
+        mParams->addParam( "Auto WB", &isAutoWB );
+        //mParams->addParam( "Gain", std::bind( &CinderPS3EyeApp::setGain, this ) ).min( 0 ).max( 450 ).step( 1 );
+
+        
         //        eyeFpsLab = new eyeFPS(CI_UI_FONT_MEDIUM);
-        //        gui->addWidgetRight(eyeFpsLab);
-        //
-        //        // controls
+
         //        gui->addWidgetDown(new ciUIToggle(gh, gh, false, "auto gain"));
         //        gui->addWidgetRight(new ciUIToggle(gh, gh, false, "auto white balance"));
         //        gui->addWidgetDown(new ciUISlider(slw, gh, 0, 63, eye->getGain(), "gain"));
@@ -165,6 +151,10 @@ void CinderPS3EyeApp::setup()
         
         //gui->registerUIEvents(this, &PS3EYECaptureApp::guiEvent);
     }
+    
+}
+
+void CinderPS3EyeApp:: setGain(){
     
 }
 
@@ -202,7 +192,7 @@ void CinderPS3EyeApp::update()
         if(isNewFrame)
         {
             yuv422_to_rgba(eye->getLastFramePointer(), eye->getRowBytes(), frame_bgra, mFrame.getWidth(), mFrame.getHeight());
-            mTexture = gl::Texture::create( mFrame); //gl::Texture( mFrame );
+            mTexture = gl::Texture::create( mFrame);
         }
         mCamFrameCount += isNewFrame ? 1 : 0;
         double now = mTimer.getSeconds();
@@ -213,7 +203,7 @@ void CinderPS3EyeApp::update()
             mCamFpsLastSampleTime = now;
             mCamFpsLastSampleFrame = mCamFrameCount;
         }
-        
+        mFrameRate = eye->getFrameRate();
         //gui->update();
         //eyeFpsLab->update_fps(mCamFps);
     }
@@ -228,12 +218,12 @@ void CinderPS3EyeApp::draw()
     
     gl::setMatricesWindow( getWindowWidth(), getWindowHeight() );
     if( mTexture ) {
-        //glPushMatrix();
+
         gl::draw( mTexture );
-        //glPopMatrix();
+
     }
     
-    //	gui->draw();
+	mParams->draw();
 }
 
 CINDER_APP_NATIVE( CinderPS3EyeApp, RendererGl )

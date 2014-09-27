@@ -341,7 +341,7 @@
 				);
 				OTHER_LDFLAGS = (
 					"\"$(CINDER_PATH)/lib/libcinder.a\"",
-					../../../lib/libusb/osx/libusb.a,
+					"../../../lib/libusb/osx/libusb-1.0.0.dylib",
 				);
 				PRODUCT_NAME = CinderPS3Eye;
 				STRIP_INSTALLED_PRODUCT = YES;
