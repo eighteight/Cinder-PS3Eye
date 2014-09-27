@@ -7,22 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		006D720419952D00008149E2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006D720219952D00008149E2 /* AVFoundation.framework */; };
+		006D720519952D00008149E2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006D720319952D00008149E2 /* CoreMedia.framework */; };
 		0091D8F90E81B9330029341E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0091D8F80E81B9330029341E /* OpenGL.framework */; };
 		00B784B30FF439BC000DE1D7 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784AF0FF439BC000DE1D7 /* Accelerate.framework */; };
 		00B784B40FF439BC000DE1D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */; };
 		00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B10FF439BC000DE1D7 /* AudioUnit.framework */; };
 		00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
-		15F3FE3C7AB24E54865E6A8A /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3D7574F80B9D4D61958B1695 /* CinderApp.icns */; };
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
-		64BD0E201E384D118B42857C /* ps3eye.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62082D76D4964048B7F17E5B /* ps3eye.cpp */; };
+		83812CDA5FA34235A0775CD6 /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = DC65ABBFB199472E86EDF48A /* CinderApp.icns */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		A02E952245844FF4ACC8A3A9 /* CinderPS3EyeApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80C2263BA5974EA481B42389 /* CinderPS3EyeApp.cpp */; };
-		AF06781C19D63880007C73EE /* libusb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF06781919D63880007C73EE /* libusb.a */; };
-		B91D80AA02364EE5B8064C80 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B3EC2C692D4419981788E4 /* IOKit.framework */; };
+		A400AFB5E3EB42DBB79DCF5C /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E569B4F7AF92497A995E1709 /* IOKit.framework */; };
+		AF5F3FC019D64C9F00CDF409 /* libusb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF5F3FBD19D64C9F00CDF409 /* libusb.a */; };
+		B2CC42B79B694C3E8DFF75D2 /* ps3eye.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AFBA15EAA7D8426C9A2C5953 /* ps3eye.cpp */; };
+		D66D548ECF2848D1AD3FC1BC /* CinderPS3EyeApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B329FE2A2CA84F1AAAD60181 /* CinderPS3EyeApp.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		006D720219952D00008149E2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		006D720319952D00008149E2 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		0091D8F80E81B9330029341E /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		00B784AF0FF439BC000DE1D7 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -31,18 +35,19 @@
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		3A2838096EA54B0BB639560A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3D7574F80B9D4D61958B1695 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
-		40B3EC2C692D4419981788E4 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
-		4D37FD88D2AB49E0A0098343 /* libusb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = libusb.h; path = ../../../src/libusb.h; sourceTree = "<group>"; };
+		529BB6FC93D141DB94D4643C /* CinderPS3Eye_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = CinderPS3Eye_Prefix.pch; sourceTree = "<group>"; };
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		5323E6B50EAFCA7E003A9687 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
-		5ECF42BF94A643D9B6AB265B /* ps3eye.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ps3eye.h; path = ../../../src/ps3eye.h; sourceTree = "<group>"; };
-		62082D76D4964048B7F17E5B /* ps3eye.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = ps3eye.cpp; path = ../../../src/ps3eye.cpp; sourceTree = "<group>"; };
-		77EB64C1237545ECB2CD4A0A /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
-		80C2263BA5974EA481B42389 /* CinderPS3EyeApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = CinderPS3EyeApp.cpp; path = ../src/CinderPS3EyeApp.cpp; sourceTree = "<group>"; };
+		58DBAA240CFC42DBA22DAC15 /* libusb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = libusb.h; path = ../../../src/libusb.h; sourceTree = "<group>"; };
+		866CBE73B84E4E94A6220354 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* CinderPS3Eye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CinderPS3Eye.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF06781919D63880007C73EE /* libusb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libusb.a; sourceTree = "<group>"; };
+		957B3FC1CCCB42AEA561FFDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF5F3FBD19D64C9F00CDF409 /* libusb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libusb.a; sourceTree = "<group>"; };
+		AFBA15EAA7D8426C9A2C5953 /* ps3eye.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = ps3eye.cpp; path = ../../../src/ps3eye.cpp; sourceTree = "<group>"; };
+		B329FE2A2CA84F1AAAD60181 /* CinderPS3EyeApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = CinderPS3EyeApp.cpp; path = ../src/CinderPS3EyeApp.cpp; sourceTree = "<group>"; };
+		DC65ABBFB199472E86EDF48A /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
+		E569B4F7AF92497A995E1709 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		FD22676B35F94D4CA7B8365E /* ps3eye.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ps3eye.h; path = ../../../src/ps3eye.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +55,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF06781C19D63880007C73EE /* libusb.a in Frameworks */,
+				AF5F3FC019D64C9F00CDF409 /* libusb.a in Frameworks */,
+				006D720419952D00008149E2 /* AVFoundation.framework in Frameworks */,
+				006D720519952D00008149E2 /* CoreMedia.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				0091D8F90E81B9330029341E /* OpenGL.framework in Frameworks */,
 				5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */,
@@ -59,7 +66,7 @@
 				00B784B40FF439BC000DE1D7 /* AudioToolbox.framework in Frameworks */,
 				00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */,
 				00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */,
-				B91D80AA02364EE5B8064C80 /* IOKit.framework in Frameworks */,
+				A400AFB5E3EB42DBB79DCF5C /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,7 +76,7 @@
 		01B97315FEAEA392516A2CEA /* Blocks */ = {
 			isa = PBXGroup;
 			children = (
-				7AC2D1CCC8844CFE936793EC /* Cinder-PS3Eye */,
+				92AD1C8F933D4CA7ACA13C2D /* Cinder-PS3Eye */,
 			);
 			name = Blocks;
 			sourceTree = "<group>";
@@ -77,7 +84,7 @@
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				80C2263BA5974EA481B42389 /* CinderPS3EyeApp.cpp */,
+				B329FE2A2CA84F1AAAD60181 /* CinderPS3EyeApp.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -85,6 +92,8 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				006D720219952D00008149E2 /* AVFoundation.framework */,
+				006D720319952D00008149E2 /* CoreMedia.framework */,
 				00B784AF0FF439BC000DE1D7 /* Accelerate.framework */,
 				00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */,
 				00B784B10FF439BC000DE1D7 /* AudioUnit.framework */,
@@ -130,7 +139,8 @@
 		29B97315FDCFA39411CA2CEA /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				77EB64C1237545ECB2CD4A0A /* Resources.h */,
+				866CBE73B84E4E94A6220354 /* Resources.h */,
+				529BB6FC93D141DB94D4643C /* CinderPS3Eye_Prefix.pch */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -138,8 +148,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3D7574F80B9D4D61958B1695 /* CinderApp.icns */,
-				3A2838096EA54B0BB639560A /* Info.plist */,
+				DC65ABBFB199472E86EDF48A /* CinderApp.icns */,
+				957B3FC1CCCB42AEA561FFDD /* Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -149,53 +159,53 @@
 			children = (
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
-				40B3EC2C692D4419981788E4 /* IOKit.framework */,
+				E569B4F7AF92497A995E1709 /* IOKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7AC2D1CCC8844CFE936793EC /* Cinder-PS3Eye */ = {
+		92AD1C8F933D4CA7ACA13C2D /* Cinder-PS3Eye */ = {
 			isa = PBXGroup;
 			children = (
-				AF06781619D63880007C73EE /* lib */,
-				A4B75E60F15A486F90FB95C6 /* src */,
+				AF5F3FBA19D64C9F00CDF409 /* lib */,
+				B97AB0E35A7C41DCB6CE510D /* src */,
 			);
 			name = "Cinder-PS3Eye";
 			sourceTree = "<group>";
 		};
-		A4B75E60F15A486F90FB95C6 /* src */ = {
+		AF5F3FBA19D64C9F00CDF409 /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				5ECF42BF94A643D9B6AB265B /* ps3eye.h */,
-				4D37FD88D2AB49E0A0098343 /* libusb.h */,
-				62082D76D4964048B7F17E5B /* ps3eye.cpp */,
-			);
-			name = src;
-			sourceTree = "<group>";
-		};
-		AF06781619D63880007C73EE /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				AF06781719D63880007C73EE /* libusb */,
+				AF5F3FBB19D64C9F00CDF409 /* libusb */,
 			);
 			name = lib;
 			path = ../../../lib;
 			sourceTree = "<group>";
 		};
-		AF06781719D63880007C73EE /* libusb */ = {
+		AF5F3FBB19D64C9F00CDF409 /* libusb */ = {
 			isa = PBXGroup;
 			children = (
-				AF06781819D63880007C73EE /* osx */,
+				AF5F3FBC19D64C9F00CDF409 /* osx */,
 			);
 			path = libusb;
 			sourceTree = "<group>";
 		};
-		AF06781819D63880007C73EE /* osx */ = {
+		AF5F3FBC19D64C9F00CDF409 /* osx */ = {
 			isa = PBXGroup;
 			children = (
-				AF06781919D63880007C73EE /* libusb.a */,
+				AF5F3FBD19D64C9F00CDF409 /* libusb.a */,
 			);
 			path = osx;
+			sourceTree = "<group>";
+		};
+		B97AB0E35A7C41DCB6CE510D /* src */ = {
+			isa = PBXGroup;
+			children = (
+				FD22676B35F94D4CA7B8365E /* ps3eye.h */,
+				58DBAA240CFC42DBA22DAC15 /* libusb.h */,
+				AFBA15EAA7D8426C9A2C5953 /* ps3eye.cpp */,
+			);
+			name = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,7 +260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15F3FE3C7AB24E54865E6A8A /* CinderApp.icns in Resources */,
+				83812CDA5FA34235A0775CD6 /* CinderApp.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,8 +271,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A02E952245844FF4ACC8A3A9 /* CinderPS3EyeApp.cpp in Sources */,
-				64BD0E201E384D118B42857C /* ps3eye.cpp in Sources */,
+				D66D548ECF2848D1AD3FC1BC /* CinderPS3EyeApp.cpp in Sources */,
+				B2CC42B79B694C3E8DFF75D2 /* ps3eye.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +282,7 @@
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
@@ -294,10 +305,11 @@
 				);
 				OTHER_LDFLAGS = (
 					"\"$(CINDER_PATH)/lib/libcinder_d.a\"",
-					../../../lib/libusb/osx/libusb.a,
+					"../../../lib/libusb/osx/libusb-1.0.0.dylib",
 				);
 				PRODUCT_NAME = CinderPS3Eye;
 				SYMROOT = ./build;
+				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -305,6 +317,7 @@
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -333,6 +346,7 @@
 				PRODUCT_NAME = CinderPS3Eye;
 				STRIP_INSTALLED_PRODUCT = YES;
 				SYMROOT = ./build;
+				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -341,16 +355,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = i386;
+				ARCHS = x86_64;
 				CINDER_PATH = ../../../../..;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/boost\"";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include \"../../../../Cinder-ImGui/lib/imgui\" ../../../src";
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include ../../../src";
 			};
 			name = Debug;
 		};
@@ -358,16 +372,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = i386;
+				ARCHS = x86_64;
 				CINDER_PATH = ../../../../..;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/boost\"";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include \"../../../../Cinder-ImGui/lib/imgui\" ../../../src";
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include ../../../src";
 			};
 			name = Release;
 		};

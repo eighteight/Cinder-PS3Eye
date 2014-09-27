@@ -1,7 +1,7 @@
 #include "cinder/app/AppNative.h"
 #include "cinder/gl/gl.h"
 #include "cinder/gl/Texture.h"
-//#include "ciUI.h"
+#include "cinder/app/RendererGl.h"
 #include "ps3eye.h"
 
 using namespace ci;
@@ -80,33 +80,33 @@ static void yuv422_to_rgba(const uint8_t *yuv_src, const int stride, uint8_t *ds
 
 class CinderPS3EyeApp : public AppNative {
 public:
-	void setup();
-	void mouseDown( MouseEvent event );
-	void update();
-	void draw();
+    void setup();
+    void mouseDown( MouseEvent event );
+    void update();
+    void draw();
     void shutdown();
     
-	void eyeUpdateThreadFn();
+    void eyeUpdateThreadFn();
     
-	//ciUICanvas *gui;
+    //ciUICanvas *gui;
     //eyeFPS *eyeFpsLab;
     //void guiEvent(ciUIEvent *event);
     
     ps3eye::PS3EYECam::PS3EYERef eye;
     
-	bool					mShouldQuit;
-	std::thread				mThread;
+    bool					mShouldQuit;
+    std::thread				mThread;
     
-	gl::Texture mTexture;
-	uint8_t *frame_bgra;
-	Surface mFrame;
+    gl::TextureRef mTexture;
+    uint8_t *frame_bgra;
+    Surface mFrame;
     
-	// mesure cam fps
-	Timer					mTimer;
-	uint32_t				mCamFrameCount;
-	float					mCamFps;
-	uint32_t				mCamFpsLastSampleFrame;
-	double					mCamFpsLastSampleTime;
+    // mesure cam fps
+    Timer					mTimer;
+    uint32_t				mCamFrameCount;
+    float					mCamFps;
+    uint32_t				mCamFpsLastSampleFrame;
+    double					mCamFpsLastSampleTime;
     
 };
 
@@ -114,19 +114,19 @@ void CinderPS3EyeApp::setup()
 {
     using namespace ps3eye;
     
-	mShouldQuit = false;
+    mShouldQuit = false;
     
     // list out the devices
     std::vector<PS3EYECam::PS3EYERef> devices( PS3EYECam::getDevices() );
-	console() << "found " << devices.size() << " cameras" << std::endl;
+    console() << "found " << devices.size() << " cameras" << std::endl;
     
-	mTimer = Timer(true);
-	mCamFrameCount = 0;
-	mCamFps = 0;
-	mCamFpsLastSampleFrame = 0;
-	mCamFpsLastSampleTime = 0;
+    mTimer = Timer(true);
+    mCamFrameCount = 0;
+    mCamFps = 0;
+    mCamFpsLastSampleFrame = 0;
+    mCamFpsLastSampleTime = 0;
     
-	//gui = new ciUICanvas(0,0,320, 480);
+    //gui = new ciUICanvas(0,0,320, 480);
     
     float gh = 15;
     float slw = 320 - 20;
@@ -139,12 +139,12 @@ void CinderPS3EyeApp::setup()
         eye->start();
         
         
-		frame_bgra = new uint8_t[eye->getWidth()*eye->getHeight()*4];
-		mFrame = Surface(frame_bgra, eye->getWidth(), eye->getHeight(), eye->getWidth()*4, SurfaceChannelOrder::BGRA);
-		memset(frame_bgra, 0, eye->getWidth()*eye->getHeight()*4);
-		
-		// create and launch the thread
-		mThread = thread( bind( &CinderPS3EyeApp::eyeUpdateThreadFn, this ) );
+        frame_bgra = new uint8_t[eye->getWidth()*eye->getHeight()*4];
+        mFrame = Surface(frame_bgra, eye->getWidth(), eye->getHeight(), eye->getWidth()*4, SurfaceChannelOrder::BGRA);
+        memset(frame_bgra, 0, eye->getWidth()*eye->getHeight()*4);
+        
+        // create and launch the thread
+        mThread = thread( bind( &CinderPS3EyeApp::eyeUpdateThreadFn, this ) );
         
         //        gui->addWidgetDown(new ciUILabel("EYE", CI_UI_FONT_MEDIUM));
         //
@@ -170,23 +170,23 @@ void CinderPS3EyeApp::setup()
 
 void CinderPS3EyeApp::eyeUpdateThreadFn()
 {
-	while( !mShouldQuit )
-	{
-		bool res = ps3eye::PS3EYECam::updateDevices();
+    while( !mShouldQuit )
+    {
+        bool res = ps3eye::PS3EYECam::updateDevices();
         if(!res) break;
-	}
+    }
 }
 
 void CinderPS3EyeApp::shutdown()
 {
-	mShouldQuit = true;
-	mThread.join();
+    mShouldQuit = true;
+    mThread.join();
     // You should stop before exiting
     // otherwise the app will keep working
     eye->stop();
     //
-	delete[] frame_bgra;
-	//delete gui;
+    delete[] frame_bgra;
+    //delete gui;
     
 }
 
@@ -202,7 +202,7 @@ void CinderPS3EyeApp::update()
         if(isNewFrame)
         {
             yuv422_to_rgba(eye->getLastFramePointer(), eye->getRowBytes(), frame_bgra, mFrame.getWidth(), mFrame.getHeight());
-            mTexture = gl::Texture( mFrame );
+            mTexture = gl::Texture::create( mFrame); //gl::Texture( mFrame );
         }
         mCamFrameCount += isNewFrame ? 1 : 0;
         double now = mTimer.getSeconds();
@@ -221,18 +221,18 @@ void CinderPS3EyeApp::update()
 
 void CinderPS3EyeApp::draw()
 {
-	gl::clear( Color::black() );
-	gl::disableDepthRead();
-	gl::disableDepthWrite();
-	gl::enableAlphaBlending();
+    gl::clear( Color::black() );
+    gl::disableDepthRead();
+    gl::disableDepthWrite();
+    gl::enableAlphaBlending();
     
-	gl::setMatricesWindow( getWindowWidth(), getWindowHeight() );
-	if( mTexture ) {
-		glPushMatrix();
-		gl::draw( mTexture );
-		glPopMatrix();
-	}
-	
+    gl::setMatricesWindow( getWindowWidth(), getWindowHeight() );
+    if( mTexture ) {
+        //glPushMatrix();
+        gl::draw( mTexture );
+        //glPopMatrix();
+    }
+    
     //	gui->draw();
 }
 
