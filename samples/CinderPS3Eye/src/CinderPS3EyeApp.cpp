@@ -133,13 +133,14 @@ void CinderPS3EyeApp::setup()
 
         // create and launch the thread
         mThread = thread( bind( &CinderPS3EyeApp::eyeUpdateThreadFn, this ) );
-
         mParams = params::InterfaceGl::create( "PS3EYE", toPixels( ivec2( 180, 150 ) ) );
 
         mFrameRate = eye->getFrameRate();
         mGain = eye->getGain();
 
-        isAutoGain = eye->getAutogain();
+        // always set to true
+        isAutoGain = true;
+        //isAutoGain = eye->getAutogain();
         isAutoWB = eye->getAutoWhiteBalance();
 
         mExposure = eye->getExposure();
