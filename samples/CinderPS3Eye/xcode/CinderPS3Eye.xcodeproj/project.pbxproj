@@ -300,8 +300,8 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/eight/repos/Cinder/blocks/Cinder-PS3Eye/lib/libusb/osx",
-					"/Users/eight/repos/Cinder/blocks/Cinder-PS3Eye/lib/libusb/vc10",
+					../../../lib/libusb/osx,
+					../../../lib/libusb/vc10,
 				);
 				OTHER_LDFLAGS = (
 					"\"$(CINDER_PATH)/lib/libcinder_d.a\"",
@@ -336,8 +336,8 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/eight/repos/Cinder/blocks/Cinder-PS3Eye/lib/libusb/osx",
-					"/Users/eight/repos/Cinder/blocks/Cinder-PS3Eye/lib/libusb/vc10",
+					../../../lib/libusb/osx,
+					../../../lib/libusb/vc10,
 				);
 				OTHER_LDFLAGS = (
 					"\"$(CINDER_PATH)/lib/libcinder.a\"",
