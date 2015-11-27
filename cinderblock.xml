@@ -21,5 +21,5 @@
 		<staticLibrary>lib/libusb/osx/libusb-1.0.0.dylib</staticLibrary>
 	</platform>
 </block>
-<template>templates/Basic GL/template.xml</template>
+<template>templates/CinderPS3Eye/template.xml</template>
 </cinder>

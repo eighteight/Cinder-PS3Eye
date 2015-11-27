@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<cinder>
+<template name="Cinder-PS3: Basic" parent="org.libcinder.apptemplates.basicopengl">
+	<requires>us.onewaytheater.ps3eye</requires>
+	<source replaceContents="true" replaceName="true">src/_TBOX_PREFIX_App.cpp</source>
+	<asset>assets/loading.png</asset>
+</template>
+</cinder>

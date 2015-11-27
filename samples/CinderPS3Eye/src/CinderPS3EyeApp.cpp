@@ -1,4 +1,4 @@
-#include "cinder/app/AppNative.h"
+#include "cinder/app/App.h"
 #include "cinder/gl/gl.h"
 #include "cinder/gl/Texture.h"
 #include "cinder/app/RendererGl.h"
@@ -58,7 +58,7 @@ static void yuv422_to_rgba(const uint8_t *yuv_src, const int stride, uint8_t *ds
     }
 }
 
-class CinderPS3EyeApp : public AppNative {
+class CinderPS3EyeApp : public App {
 public:
     void setup();
     void mouseDown( MouseEvent event );
@@ -288,4 +288,4 @@ void CinderPS3EyeApp::draw()
 	mParams->draw();
 }
 
-CINDER_APP_NATIVE( CinderPS3EyeApp, RendererGl )
+CINDER_APP( CinderPS3EyeApp, RendererGl )
